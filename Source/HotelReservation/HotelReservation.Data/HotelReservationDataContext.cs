@@ -20,6 +20,9 @@ namespace HotelReservation.Data
             //Changing Database table name to Metadata
             modelBuilder.Entity<Customer>()
                 .ToTable("tblCustomers");
+
+            modelBuilder.Entity<Booking>()
+               .ToTable("tblBookings");
         }
     }
 }

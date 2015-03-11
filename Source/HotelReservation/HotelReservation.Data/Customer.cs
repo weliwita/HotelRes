@@ -9,6 +9,19 @@ namespace HotelReservation.Data
     public class Customer
     {
         public int CustomerId { get; set; }
-        public string Name { get; set; }
+        public string CustomerTitle { get; set; }
+        public string CustomerForenames { get; set; }
+        public string CustomerSurnames { get; set; }
+        public DateTime CustomerDOB { get; set; }
+        public string CustomerAddressStreet { get; set; }
+        public string CustomerAddressTown { get; set; }
+        public string CustomerAddressCountry { get; set; }
+        public string CustomerAddressPostalCode { get; set; }
+        public string CustomerHomePhone { get; set; }
+        public string CustomerWorkPhone { get; set; }
+        public string CustomerMobilePhone { get; set; }
+        public string CustomerEmail { get; set; }
+
+        public List<Booking> Bookings { get; set; }
     }
 }
