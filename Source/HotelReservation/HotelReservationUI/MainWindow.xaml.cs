@@ -27,7 +27,7 @@ namespace HotelReservationUI
             HotelReservationDataContext db = new HotelReservationDataContext();
             using (db)
             {
-                db.Customers.Add(new Customer { CustomerTitle = "me",CustomerDOB=DateTime.Now });
+                db.Customers.Add(new Customer() { CustomerTitle = "me",CustomerDOB=DateTime.Now });
                 
                 db.SaveChanges();
             }

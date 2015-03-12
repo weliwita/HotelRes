@@ -8,6 +8,13 @@ namespace HotelReservation.Data
 {
     public class Booking
     {
+        private Customer _customer;
+
+        public Booking()
+        {
+            _customer = new Customer();
+            _rooms = new List<Room>();
+        }
         public int BookingId { get; set; }
         public int CustomerId { get; set; }
         public DateTime DateBookingMade { get; set; }
@@ -19,6 +26,18 @@ namespace HotelReservation.Data
         public DateTime TotalPaymentMadeOn { get; set; }
         public string BookingComments { get; set; }
 
+        public virtual Customer Customer
+        {
+            get { return _customer; }
+            set { _customer = value; }
+        }
 
+        private ICollection<Room> _rooms;
+
+        public virtual ICollection<Room> Rooms
+        {
+            get { return _rooms; }
+            set { _rooms = value; }
+        }
     }
 }

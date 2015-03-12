@@ -8,6 +8,13 @@ namespace HotelReservation.Data
 {
     public class Customer
     {
+        private ICollection<Booking> _bookings;
+
+        public Customer()
+        {
+            _bookings = new List<Booking>();
+        }
+
         public int CustomerId { get; set; }
         public string CustomerTitle { get; set; }
         public string CustomerForenames { get; set; }
@@ -22,6 +29,12 @@ namespace HotelReservation.Data
         public string CustomerMobilePhone { get; set; }
         public string CustomerEmail { get; set; }
 
-        public List<Booking> Bookings { get; set; }
+        public virtual ICollection<Booking> Bookings
+        {
+            get { return _bookings; }
+            set { _bookings = value; }
+        }
+        
+       
     }
 }

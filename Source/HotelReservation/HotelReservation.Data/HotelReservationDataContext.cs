@@ -14,6 +14,13 @@ namespace HotelReservation.Data
         { }
 
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Booking> Bookings { get; set; }
+        public DbSet<Facility> Facilities { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<RoomBand> RoomBands { get; set; }
+        public DbSet<RoomType> RoomTypes { get; set; }
+        public DbSet<RoomPrice> RoomPrices { get; set; }
+        public DbSet<Guest> Guests { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -23,6 +30,24 @@ namespace HotelReservation.Data
 
             modelBuilder.Entity<Booking>()
                .ToTable("tblBookings");
+
+            modelBuilder.Entity<Facility>()
+               .ToTable("tblFacilitiesList");
+
+            modelBuilder.Entity<Room>()
+               .ToTable("tblRooms");
+
+            modelBuilder.Entity<RoomBand>()
+                .ToTable("tblRoomBands");
+
+            modelBuilder.Entity<RoomType>()
+                .ToTable("tblRoomTypes");
+
+            modelBuilder.Entity<RoomPrice>()
+                .ToTable("tblRoomPrices");
+
+            modelBuilder.Entity<Guest>()
+              .ToTable("tblGuests");
         }
     }
 }
