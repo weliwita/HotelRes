@@ -13,7 +13,8 @@ namespace HotelReservation.Data
         public Booking()
         {
             _customer = new Customer();
-            _rooms = new List<Room>();
+            _rooms = new List<BookingRoom>();
+            _payments = new List<Payment>();
         }
         public int BookingId { get; set; }
         public int CustomerId { get; set; }
@@ -32,12 +33,21 @@ namespace HotelReservation.Data
             set { _customer = value; }
         }
 
-        private ICollection<Room> _rooms;
+        private ICollection<BookingRoom> _rooms;
 
-        public virtual ICollection<Room> Rooms
+        public virtual ICollection<BookingRoom> Rooms
         {
             get { return _rooms; }
             set { _rooms = value; }
         }
+
+        private ICollection<Payment> _payments;
+
+        public ICollection<Payment> Payments
+        {
+            get { return _payments; }
+            set { _payments = value; }
+        }
+        
     }
 }

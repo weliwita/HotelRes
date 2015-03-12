@@ -34,6 +34,8 @@ namespace HotelReservation.Data
             get { return _bookings; }
             set { _bookings = value; }
         }
+
+
         
        
     }

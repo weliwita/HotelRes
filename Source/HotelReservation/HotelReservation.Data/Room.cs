@@ -14,7 +14,7 @@ namespace HotelReservation.Data
             _roomPrice = new RoomPrice();
             _facilitiesList = new List<Facility>();
 
-            _guests = new List<Guest>();
+            _bookings = new List<BookingRoom>();
         }
 
         public int RoomID { get; set; }
@@ -58,12 +58,12 @@ namespace HotelReservation.Data
             set { _facilitiesList = value; }
         }
 
-        private ICollection<Guest> _guests;
+        private ICollection<BookingRoom> _bookings;
 
-        public ICollection<Guest> Guests
+        public ICollection<BookingRoom> Bookings
         {
-            get { return _guests; }
-            set { _guests = value; }
+            get { return _bookings; }
+            set { _bookings = value; }
         }
         
         

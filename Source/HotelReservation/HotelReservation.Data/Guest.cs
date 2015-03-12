@@ -10,7 +10,7 @@ namespace HotelReservation.Data
     {
         public Guest()
         {
-            _room = new Room();
+            _room = new BookingRoom();
         }
 
         public int GuestID { get; set; }
@@ -27,9 +27,9 @@ namespace HotelReservation.Data
         public int BookingID { get; set; }
         public int RoomID { get; set; }
 
-        private Room _room;
+        private BookingRoom _room;
 
-        public Room Room
+        public BookingRoom Room
         {
             get { return _room; }
             set { _room = value; }
