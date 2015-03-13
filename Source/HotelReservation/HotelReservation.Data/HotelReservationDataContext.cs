@@ -24,6 +24,7 @@ namespace HotelReservation.Data
         public DbSet<PaymentMethod> PaymentMethods { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<BookingRoom> BookingRooms { get; set; }
+        public DbSet<Login> LogIns { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -61,6 +62,9 @@ namespace HotelReservation.Data
 
             modelBuilder.Entity<BookingRoom>()
              .ToTable("tblBookingRooms");
+
+            modelBuilder.Entity<Login>()
+          .ToTable("tblLogIns");
         }
     }
 }

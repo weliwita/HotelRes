@@ -52,6 +52,7 @@
     <Compile Include="Facility.cs" />
     <Compile Include="Guest.cs" />
     <Compile Include="HotelReservationDataContext.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Payment.cs" />
     <Compile Include="PaymentMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

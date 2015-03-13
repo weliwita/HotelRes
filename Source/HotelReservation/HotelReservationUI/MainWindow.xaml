@@ -3,6 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Button Content="New Booking" HorizontalAlignment="Left" Margin="29,38,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Check In" HorizontalAlignment="Left" Margin="29,63,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Check Out" HorizontalAlignment="Left" Margin="29,88,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Log Out" HorizontalAlignment="Left" Margin="29,113,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
