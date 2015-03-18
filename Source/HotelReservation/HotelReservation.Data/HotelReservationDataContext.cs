@@ -17,7 +17,6 @@ namespace HotelReservation.Data
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<Facility> Facilities { get; set; }
         public DbSet<Room> Rooms { get; set; }
-        public DbSet<RoomBand> RoomBands { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
         public DbSet<RoomPrice> RoomPrices { get; set; }
         public DbSet<Guest> Guests { get; set; }
@@ -25,6 +24,9 @@ namespace HotelReservation.Data
         public DbSet<Payment> Payments { get; set; }
         public DbSet<BookingRoom> BookingRooms { get; set; }
         public DbSet<Login> LogIns { get; set; }
+        public DbSet<RoomBand> RoomBands { get; set; }
+        public DbSet<RoomFacility> RoomFacilities { get; set; }
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -42,11 +44,11 @@ namespace HotelReservation.Data
             modelBuilder.Entity<Room>()
                .ToTable("tblRooms");
 
-            modelBuilder.Entity<RoomBand>()
-                .ToTable("tblRoomBands");
-
             modelBuilder.Entity<RoomType>()
                 .ToTable("tblRoomTypes");
+
+            modelBuilder.Entity<RoomBand>()
+               .ToTable("tblRoomBands");
 
             modelBuilder.Entity<RoomPrice>()
                 .ToTable("tblRoomPrices");
@@ -60,11 +62,19 @@ namespace HotelReservation.Data
             modelBuilder.Entity<PaymentMethod>()
               .ToTable("tblPaymentMethods");
 
+            modelBuilder.Entity<RoomFacility>()
+             .ToTable("tblLINK_RoomsFacilities");
+
             modelBuilder.Entity<BookingRoom>()
-             .ToTable("tblBookingRooms");
+             .ToTable("tblLINK_BookingsRooms");
 
             modelBuilder.Entity<Login>()
-          .ToTable("tblLogIns");
+             .ToTable("tblLogIns");
+
+            //configure compositekey
+            modelBuilder.Entity<BookingRoom>().HasKey(t => new { t.BookingId, t.RoomId, t.GuestId });
+            modelBuilder.Entity<RoomFacility>().HasKey(t => new { t.RoomId, t.FacilityId });
+        
         }
     }
 }

@@ -1,0 +1,85 @@
+﻿<Window x:Class="HotelReservationUI.Booking"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Booking" Height="300" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!-- Row 1 -->
+        <Label Grid.Row="0" Content="Booking" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+        <!-- Row 2 -->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Checkin Date:"></Label>
+            <Label Grid.Row="0" Grid.Column="2" Content="Checkout Date:"></Label>
+            <DatePicker Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"  Name="datePicker_checkin"/>
+            <DatePicker Grid.Row="0" Grid.Column="3" Margin="5,5,5,5" Name="datePicker_checkout"/>
+            <Button Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" Content="GetAvailableRooms" Click="Button_Click"></Button>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="datagrid_availableRooms" />
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Room Type:"></Label>
+            <Label Grid.Row="0" Grid.Column="2" Content="Room Band:"></Label>
+            <Label Grid.Row="0" Grid.Column="4" Content="No Rooms:"></Label>
+            <ComboBox Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"  Name="combo_roomtype"/>
+            <ComboBox Grid.Row="0" Grid.Column="3" Margin="5,5,5,5" Name="combo_band"/>
+            <ComboBox Grid.Row="0" Grid.Column="5" Margin="5,5,5,5" Name="combo_Rooms"/>
+            <Button Grid.Row="0" Grid.Column="6" Margin="5,5,5,5" Name="btn_Add" Content="Add" Click="btn_Add_Click"/>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="datagrid_bookingDetails" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="RoomType " Width="*" Binding="{Binding Path=RoomType.RoomTypeDesc }" />
+                    <DataGridTextColumn Header="RoomBand" Width="*" Binding="{Binding Path=RoomBand.RoomBandDesc}" />
+                    <DataGridTextColumn Header="No of Rooms" Width="*" Binding="{Binding Path=NoOfRooms}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="5" Margin="5,5,5,5" Name="btn_Reserve" Content="Reserve" Click="btn_Reserve_Click"/>
+        </Grid>
+    </Grid>
+</Window>

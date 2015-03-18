@@ -10,18 +10,17 @@ namespace HotelReservation.Data
     {
         public Facility()
         {
-            _rooms = new List<Room>();
+             Rooms = new List<Room>();
         }
 
         public int FacilityID { get; set; }
         public string FacilityDesc { get; set; }
 
-        private ICollection<Room> _rooms;
 
         public ICollection<Room> Rooms
         {
-            get { return _rooms; }
-            set { _rooms = value; }
+            get;
+            set;
         }
         
     }

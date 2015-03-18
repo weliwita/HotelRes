@@ -9,61 +9,45 @@ namespace HotelReservation.Data
     {
         public Room()
         {
-            _roomType = new RoomType();
-            _roomBand = new RoomBand();
-            _roomPrice = new RoomPrice();
-            _facilitiesList = new List<Facility>();
-
-            _bookings = new List<BookingRoom>();
+            Bookings = new List<Booking>();
         }
 
         public int RoomID { get; set; }
         public int RoomTypeID { get; set; }
-        public int RoomBandID { get; set; }
+        public int RoomBandId { get; set; }
         public int RoomPriceID { get; set; }
+
         public string Floor { get; set; }
         public string AdditionalNotes { get; set; }
 
-        private RoomType _roomType;
+        public virtual RoomPrice RoomPrice
+        {
+            get;
+            set;
+        }
 
         public virtual RoomType RoomType
         {
-            get { return _roomType; }
-            set { _roomType = value; }
+            get;
+            set;
         }
-
-        private RoomBand _roomBand;
 
         public virtual RoomBand RoomBand
         {
-            get { return _roomBand; }
-            set { _roomBand = value; }
+            get;
+            set;
         }
 
-
-        private RoomPrice _roomPrice;
-
-        public virtual RoomPrice RoomPrice
+        public ICollection<Booking> Bookings
         {
-            get { return _roomPrice; }
-            set { _roomPrice = value; }
-        }
-        
-
-        private ICollection<Facility> _facilitiesList;
-
-        public virtual ICollection<Facility> FacilitiesList
-        {
-            get { return _facilitiesList; }
-            set { _facilitiesList = value; }
+            get;
+            set;
         }
 
-        private ICollection<BookingRoom> _bookings;
-
-        public ICollection<BookingRoom> Bookings
+        public ICollection<Facility> Facilities
         {
-            get { return _bookings; }
-            set { _bookings = value; }
+            get;
+            set;
         }
         
         

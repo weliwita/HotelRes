@@ -19,7 +19,7 @@ namespace HotelReservation.Data
         public string CustomerTitle { get; set; }
         public string CustomerForenames { get; set; }
         public string CustomerSurnames { get; set; }
-        public DateTime CustomerDOB { get; set; }
+        public DateTime? CustomerDOB { get; set; }
         public string CustomerAddressStreet { get; set; }
         public string CustomerAddressTown { get; set; }
         public string CustomerAddressCountry { get; set; }

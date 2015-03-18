@@ -10,7 +10,7 @@ namespace HotelReservation.Data
     {
         public Payment()
         {
-            _booking = new Booking();
+            
         }
         public int PaymentID { get; set; }
         public int BookingID { get; set; }
@@ -18,20 +18,16 @@ namespace HotelReservation.Data
         public double PaymentAmount { get; set; }
         public string PaymentComments { get; set; }
 
-        private Booking _booking;
-
         public Booking Booking
         {
-            get { return _booking; }
-            set { _booking = value; }
+            get;
+            set;
         }
-
-        private PaymentMethod _paymentMethod;
 
         public PaymentMethod PaymentMethod
         {
-            get { return _paymentMethod; }
-            set { _paymentMethod = value; }
+            get;
+            set;
         }
 
         

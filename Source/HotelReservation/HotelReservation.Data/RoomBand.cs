@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace HotelReservation.Data
 {
@@ -9,18 +10,15 @@ namespace HotelReservation.Data
     {
         public RoomBand()
         {
-            _rooms = new List<Room>();
+            Rooms = new List<Room>();
         }
         public int RoomBandID { get; set; }
-        public string BandDesc { get; set; }
-
-        private List<Room> _rooms;
-
-        public virtual List<Room> Rooms
+        public string RoomBandDesc { get; set; }
+       
+        public virtual ICollection<Room> Rooms
         {
-            get { return _rooms; }
-            set { _rooms = value; }
+            get;
+            set;
         }
-
     }
 }

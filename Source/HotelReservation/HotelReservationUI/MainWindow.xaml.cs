@@ -24,15 +24,14 @@ namespace HotelReservationUI
         public MainWindow()
         {
 
-            HotelReservationDataContext db = new HotelReservationDataContext();
-            using (db)
-            {
-                db.Customers.Add(new Customer() { CustomerTitle = "me",CustomerDOB=DateTime.Now });
-                
-                db.SaveChanges();
-            }
-
+            
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            new Booking().Show();
         }
     }
 }

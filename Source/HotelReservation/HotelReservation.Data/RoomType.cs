@@ -9,17 +9,15 @@ namespace HotelReservation.Data
     {
         public RoomType()
         {
-            _rooms = new List<Room>();
+            Rooms = new List<Room>();
         }
         public int RoomTypeID { get; set; }
         public string RoomTypeDesc { get; set; }
-
-        private List<Room> _rooms;
-
-        public virtual List<Room> Rooms
+       
+        public virtual ICollection<Room> Rooms
         {
-            get { return _rooms; }
-            set { _rooms = value; }
+            get;
+            set;
         }
     }
 }

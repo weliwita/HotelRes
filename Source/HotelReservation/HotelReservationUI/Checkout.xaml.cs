@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace HotelReservationUI
 {
     /// <summary>
-    /// Interaction logic for Landing.xaml
+    /// Interaction logic for Checkout.xaml
     /// </summary>
-    public partial class Landing : Window
+    public partial class Checkout : Window
     {
-        public Landing()
+        public Checkout()
         {
             InitializeComponent();
         }

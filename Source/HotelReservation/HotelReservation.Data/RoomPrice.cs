@@ -9,17 +9,15 @@ namespace HotelReservation.Data
     {
         public RoomPrice()
         {
-            _rooms = new List<Room>();
+            Rooms = new List<Room>();
         }
         public int RoomPriceID { get; set; }
-        public double RoomValue { get; set; }
+        public double RoomPriceValue { get; set; }
 
-        private List<Room> _rooms;
-
-        public virtual List<Room> Rooms
+        public virtual ICollection<Room> Rooms
         {
-            get { return _rooms; }
-            set { _rooms = value; }
+            get;
+            set;
         }
     }
 }

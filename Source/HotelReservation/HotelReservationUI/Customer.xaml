@@ -1,0 +1,68 @@
+﻿<Window x:Class="HotelReservationUI.Customer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Customer" Height="300" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <!-- Row 1 -->
+        <Label Grid.Row="0" Content="Add Customer" HorizontalAlignment="Center" FontWeight="Bold"/>
+       
+        <!-- Row 2 -->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="Customer Title:"></Label>
+            <Label Grid.Row="0" Grid.Column="2" Content="Surname:"></Label>
+            <Label Grid.Row="1" Grid.Column="0" Content="Forenames:"></Label>
+            <Label Grid.Row="1" Grid.Column="2" Content="Email:"></Label>
+
+            <Label Grid.Row="2" Grid.Column="0" Content="Address Street:"></Label>
+            <Label Grid.Row="2" Grid.Column="2" Content="Address Town:"></Label>
+            <Label Grid.Row="3" Grid.Column="0" Content="Address Country:"></Label>
+            <Label Grid.Row="3" Grid.Column="2" Content="Address PostalCode:"></Label>
+
+            <Label Grid.Row="4" Grid.Column="0" Content="Home Phone:"></Label>
+            <Label Grid.Row="4" Grid.Column="2" Content="Work Phone:"></Label>
+            <Label Grid.Row="5" Grid.Column="0" Content="Mobile Phone:"></Label>
+            
+
+
+            <TextBox x:Name="cust_title_txt" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5"></TextBox>
+            <TextBox x:Name="cust_surname_txt" Grid.Row="0" Grid.Column="3" Margin="5,5,5,5"></TextBox>
+            <TextBox x:Name="cust_forenames_txt" Grid.Row="1" Grid.Column="1" Margin="5,5,5,5"></TextBox>
+            <TextBox x:Name="cust_email_txt" Grid.Row="1" Grid.Column="3" Margin="5,5,5,5"></TextBox>
+
+            <TextBox x:Name="cust_street_txt" Grid.Row="2" Grid.Column="1" Margin="5,5,5,5"></TextBox>
+            <TextBox x:Name="cust_address_town_txt" Grid.Row="2" Grid.Column="3" Margin="5,5,5,5"></TextBox>
+            <TextBox x:Name="cust_country_txt" Grid.Row="3" Grid.Column="1" Margin="5,5,5,5"></TextBox>
+            <TextBox x:Name="cust_postalcode_txt" Grid.Row="3" Grid.Column="3" Margin="5,5,5,5"></TextBox>
+
+            <TextBox x:Name="cust_home_phone_txt" Grid.Row="4" Grid.Column="1" Margin="5,5,5,5"></TextBox>
+            <TextBox x:Name="cust_workphone_txt" Grid.Row="4" Grid.Column="3" Margin="5,5,5,5"></TextBox>
+            <TextBox x:Name="cust_mobile_phone_txt" Grid.Row="5" Grid.Column="1" Margin="5,5,5,5"></TextBox>
+
+
+            <Button Grid.Row="6" Grid.Column="3" Content="Add" Click="Button_Click"></Button>
+        </Grid>
+        
+    </Grid>
+</Window>

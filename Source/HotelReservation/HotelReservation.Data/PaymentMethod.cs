@@ -9,17 +9,17 @@ namespace HotelReservation.Data
     {
         public PaymentMethod()
         {
-            _payments = new List<Payment>();
+            Payments = new List<Payment>();
         }
         public int PaymentMethodId { get; set; }
         public string PaymentMethodDetail { get; set; }
 
-        private ICollection<Payment> _payments;
+
 
         public ICollection<Payment> Payments
         {
-            get { return _payments; }
-            set { _payments = value; }
+            get;
+            set;
         }
 
     }
